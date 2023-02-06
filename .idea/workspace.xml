@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63c85e75-890f-4c90-bee5-f88634209c5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+    <list default="true" id="63c85e75-890f-4c90-bee5-f88634209c5d" name="Changes" comment="Deploy React app to GitHub Pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/partials/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/partials/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +60,23 @@
       <workItem from="1675522803216" duration="700000" />
       <workItem from="1675672057597" duration="18224000" />
       <workItem from="1675692603751" duration="233000" />
-      <workItem from="1675694072851" duration="4114000" />
+      <workItem from="1675694072851" duration="4562000" />
     </task>
+    <task id="LOCAL-00001" summary="Deploy React app to GitHub Pages">
+      <created>1675701503776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675701503776</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Deploy React app to GitHub Pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy React app to GitHub Pages" />
   </component>
 </project>
