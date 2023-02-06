@@ -20,7 +20,7 @@ function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Site branding */}
-          <div className="flex-shrink-0 mr-4">
+          <div className="flex-shrink-0">
             {/* Logo */}
             <Link to="/" className="block" aria-label="Cruip">
               <img src="/src/images/gigi_logo.png" alt="gigi logo" width={'60px'} height={'60px'}/>
