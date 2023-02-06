@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63c85e75-890f-4c90-bee5-f88634209c5d" name="Changes" comment="Deploy React app to GitHub Pages">
+    <list default="true" id="63c85e75-890f-4c90-bee5-f88634209c5d" name="Changes" comment="fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
       <workItem from="1675522803216" duration="700000" />
       <workItem from="1675672057597" duration="18224000" />
       <workItem from="1675692603751" duration="233000" />
-      <workItem from="1675694072851" duration="4562000" />
+      <workItem from="1675694072851" duration="7580000" />
     </task>
     <task id="LOCAL-00001" summary="Deploy React app to GitHub Pages">
       <created>1675701503776</created>
@@ -69,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675701503776</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed">
+      <created>1675701762497</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675701762497</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +85,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Deploy React app to GitHub Pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deploy React app to GitHub Pages" />
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
 </project>
