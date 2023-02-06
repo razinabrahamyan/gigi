@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="63c85e75-890f-4c90-bee5-f88634209c5d" name="Changes" comment="fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/partials/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/partials/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
       <workItem from="1675672057597" duration="18224000" />
       <workItem from="1675692603751" duration="233000" />
       <workItem from="1675694072851" duration="9366000" />
-      <workItem from="1675707220148" duration="787000" />
+      <workItem from="1675707220148" duration="1775000" />
     </task>
     <task id="LOCAL-00001" summary="Deploy React app to GitHub Pages">
       <created>1675701503776</created>
@@ -90,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675706997650</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed">
+      <created>1675708413218</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675708413218</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

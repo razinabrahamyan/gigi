@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from "../images/gigi_logo.png";
 
 function Header() {
 
@@ -23,7 +24,7 @@ function Header() {
           <div className="flex-shrink-0">
             {/* Logo */}
             <Link to="/" className="block" aria-label="Cruip">
-              <img src="/src/images/gigi_logo.png" alt="gigi logo" width={'60px'} height={'60px'}/>
+              <img src={Logo} alt="gigi logo" width={'60px'} height={'60px'}/>
             </Link>
           </div>
 
