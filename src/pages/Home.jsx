@@ -5,6 +5,7 @@ import Client from "../partials/Client";
 import Lead from "../partials/Lead";
 import Self from "../partials/Self";
 import Thank from "../partials/Thank";
+import Review from "../partials/Review";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
         <Lead />
         <Self />
         <Thank />
+        <Review />
 
       </main>
     </div>
