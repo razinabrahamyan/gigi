@@ -101,6 +101,7 @@ module.exports = {
         '9': '2.25rem',
         '10': '2.5rem',
       },
+      outline: false, 
       minWidth: {
         '10': '2.5rem',
         '48': '12rem',

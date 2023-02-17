@@ -8,6 +8,9 @@ import Thank from "../partials/Thank";
 import Review from "../partials/Review";
 
 function Home() {
+
+  
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-grey-new">
 
@@ -16,6 +19,7 @@ function Home() {
 
       {/*  Page content */}
       <main className="flex-grow">
+        
         {/*  Page sections */}
         <Client />
         <Lead />

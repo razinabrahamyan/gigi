@@ -34,3 +34,18 @@
 .bg-grey-new {
     background-color: #eaeaea9e;
 }
+
+
+
+[type="text"]:focus{
+    box-shadow: none !important;
+}
+
+
+
+
+
+/* input::after{
+  content: "asdasd";
+    outline: none !important;
+} */

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gigi.iml" filepath="$PROJECT_DIR$/.idea/gigi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gigi_back.iml" filepath="$PROJECT_DIR$/.idea/gigi_back.iml" />
     </modules>
   </component>
 </project>

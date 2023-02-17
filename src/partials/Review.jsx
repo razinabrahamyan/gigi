@@ -2,6 +2,7 @@ import React from 'react';
 
 function Review() {
     return (
+        
         <section className="relative items-center">
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="pt-20 md:pt-20 pb-20">
@@ -307,6 +308,7 @@ function Review() {
                             </div>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </section>
