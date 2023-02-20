@@ -1,65 +1,32 @@
 import axios from 'axios';
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../partials/Header';
 
-function SignIn( {setId}) {
+function SignIn( {setUser}) {
 
-  const [loginInp, setLoginInp] = useState({role : "client"})
-  
+  const [username, setUsername] = useState()
+  const [role, setRole] = useState()
+  console.log(username,'usernameusernameusername');``
+  console.log(role,'rolerole');
+  console.log(import.meta.env.VITE_APP_API_URL,'REACT_APP_API_URL');
 
-
-  console.log(loginInp)
-  const loginRef = useRef()
-  const rolRef = useRef()
   const navigate = useNavigate()
 
-
-  const handelClickLogin = (e) => {
-    e.preventDefault()
-    const value = loginRef.current.value.trim();
-    const name = "username"
-    setLoginInp((item) => {
-      return { ...item, [name]: value };
-    });
-  }
-
-
-  const handelClickRol = (e) => {
-    e.preventDefault()
-    const value = rolRef.current.value.trim();
-    const name = "role"
-    setLoginInp((item) => {
-      return { ...item, [name]: value };
-    });
-
-  }
-
-
-  const handelSubmit = (e) => {
-    e.preventDefault()
-    axios.post('http://localhost:3000/quizzes', loginInp, {
+  const handelSubmit = () => {
+    axios.post(import.meta.env.VITE_APP_API_URL+'/quizzes', {
+      'username' : username,
+      'role' : role
+    }, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
       .then((res) =>{
-        
-        setId(res.data._id)
-       if (res.data.role === "client") {
-        
-      navigate('./client')
-    }
-    else if (res.data.role === "lead") {
-      navigate('./lead')
-    } else if (res.data.role === "self") {
-      navigate('./self')
-    }});
+        setUser(res.data)
+        navigate('/home')
+        });
   };
-
-
-
-
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -77,12 +44,11 @@ function SignIn( {setId}) {
               </div>
               {/* Form */}
               <div className="max-w-sm mx-auto">
-                <form onSubmit={handelSubmit}  >
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" name="username" htmlFor="login">Login</label>
-                      <input ref={loginRef} onKeyUp={handelClickLogin} id="username" type="text" className="form-input w-full text-gray-800" placeholder="Enter your login" required />
-                      <p className="text-red-500 text-xs italic h-2">{loginInp.username ? "" : "Please fill out this field."}</p>
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="login">Login</label>
+                      <input onChange={(e)=>setUsername(e.target.value)} id="username" type="text" className="form-input w-full text-gray-800" placeholder="Enter your login" required />
+                      {/*<p className="text-red-500 text-xs italic h-2">{error.username ? "" : "Please fill out this field."}</p>*/}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
@@ -91,14 +57,13 @@ function SignIn( {setId}) {
                         <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="role">Role</label>
                       </div>
                       <select
-                        ref={rolRef}
-                        onClick={handelClickRol}
+                        onChange={(e)=>setRole(e.target.value)}
                         className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <option value={'client'}>Client/ Team Member</option>
+                        <option>Please select your role</option>
+                        <option value={'client'}>Client/Team Member</option>
                         <option value={'lead'}>Lead</option>
                         <option value={'self'}>Self</option>
                       </select>
-                      {/*<input id="role" type="text" className="form-input w-full text-gray-800" placeholder="Enter your role" required />*/}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
@@ -106,15 +71,11 @@ function SignIn( {setId}) {
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3">
-
-                    </div>
+                    <div className="w-full px-3"/>
                   </div>
-                  <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full" >
-                    Sigin in
+                  <button onClick={handelSubmit} type={"submit"} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full" >
+                    Sign in
                   </button>
-                </form>
-
               </div>
             </div>
             <h4 className="h4 text-center" >

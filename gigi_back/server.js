@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import {server_config} from './config/index.js';
-import Quiz from "./models/Quiz.js";
 import QuestionsSeeder from "./seeders/QuestionsSeeder.js";
 import { getAll , create , getUser , update , getClientQueztions  , getLeadQueztions , getSelfQueztions} from './quezControler/quezControler.js';
 

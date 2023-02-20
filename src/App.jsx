@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Routes,
   Route,
@@ -7,10 +7,6 @@ import {
 
 import 'aos/dist/aos.css';
 import './css/style.css';
-
-import Client from './partials/Client';
-import Lead from './partials/Lead';
-import Self from './partials/Self';
 
 import AOS from 'aos';
 
@@ -35,10 +31,8 @@ function App() {
   });
 
 
-const [id,setId] = useState()
-useEffect(()=>{console.log(id)})
- 
- 
+const [user,setUser] = useState();
+  console.log(user)
 
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
@@ -49,13 +43,10 @@ useEffect(()=>{console.log(id)})
   return (
     <>
       <Routes>
-        <Route exact path="/home" element={<Home id={id} />} />
-        <Route  path="/client" element={<Client id={id}/>} />
-        <Route  path="/lead" element={<Lead id={id}/>} />
-        <Route  path="/self" element={<Self id={id}/>} />
-        <Route  path="/self" />
-        <Route  path="/thank" element={<Thank  />} />
-        <Route  path="/" element={<SignIn  setId={setId} />} />
+        <Route exact path="/home" element={<Home user={user}/>} />
+        <Route  path="/review" element={<Review user={user}/>} />
+        <Route  path="/thank" element={<Thank />} />
+        <Route  path="/" element={<SignIn  setUser={setUser}/>} />
       </Routes>
     </>
   );

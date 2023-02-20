@@ -9,7 +9,6 @@ const Questions = mongoose.model("Questions", new Schema({
         type: {type: String},
         value:{type: Number},
         name: {type: String}
-
     },
     {
         timestamps: true,

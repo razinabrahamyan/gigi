@@ -12,9 +12,7 @@ function Client({id}) {
     const [quez, setQuez] = useState([])
     const [user , setUser] = useState([])
     const [info, setInfo] = useState({ role: "client" })
-   
 
-   
     const handelCahnge = (e) => {
         const { name, value } = e.target;
         setInfo((item) => {
@@ -28,7 +26,9 @@ function Client({id}) {
         axios.get(`http://localhost:3000/getClientQueztions`)
         .then(res => {
           const persons = res.data;
+
           setQuez(persons)
+            console.log(quez,'quezquezquezquezquez');
         })
     }, [])
     
@@ -42,7 +42,7 @@ function Client({id}) {
         }
       })
         .then((res) =>{
-           console.log(res.data)  
+           console.log(res.data,'questionssadasdasdas')
          })     .catch((err) => {
                  console.log(err, "My error PATCH")
       })
