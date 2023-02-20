@@ -8,14 +8,18 @@ import Thank from "../partials/Thank";
 import Review from "../partials/Review";
 
 function Home({user}) {
+    const locUser = JSON.parse(localStorage.getItem("user"))
+
+
     let component;
-    if (user.role === 'client') {
-        component = <Client user={user}/>;
-    } else if (user.role === 'lead') {
-        component = <Lead user={user}/>;
-    } else if (user.role === 'self') {
-        component = <Self user={user}/>;
+    if (locUser.role === 'client') {
+        component = <Client user={locUser}/>;
+    } else if (locUser.role === 'lead') {
+        component = <Lead user={locUser}/>;
+    } else if (locUser.role === 'self') {
+        component = <Self user={locUser}/>;
     }
+
     return (
         <div className="flex flex-col min-h-screen overflow-hidden bg-grey-new">
             <Header/>

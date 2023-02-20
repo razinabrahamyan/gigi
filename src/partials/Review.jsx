@@ -1,8 +1,12 @@
 import React from 'react';
+import Header  from './Header';
 
 function Review() {
+     let locUser  = JSON.parse(localStorage.getItem("user"))
+     
     return (
-        
+        <>
+        <Header />
         <section className="relative items-center">
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="pt-20 md:pt-20 pb-20">
@@ -10,7 +14,7 @@ function Review() {
                     <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
                          data-aos="fade-right">
                         <div className="mb-8 text-center">
-                            <h3 className={'header-color h3'}>Performance Review of (name)</h3>
+                            <h3 className={'header-color h3'}>Performance Review of ({locUser.username})</h3>
                         </div>
                     </div>
                     {/* Section form */}
@@ -312,6 +316,7 @@ function Review() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
 

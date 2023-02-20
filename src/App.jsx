@@ -32,7 +32,7 @@ function App() {
 
 
 const [user,setUser] = useState();
-  console.log(user)
+
 
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'

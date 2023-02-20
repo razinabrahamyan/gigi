@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../partials/Header';
 
@@ -7,11 +7,14 @@ function SignIn( {setUser}) {
 
   const [username, setUsername] = useState()
   const [role, setRole] = useState()
-  console.log(username,'usernameusernameusername');``
-  console.log(role,'rolerole');
-  console.log(import.meta.env.VITE_APP_API_URL,'REACT_APP_API_URL');
+  const [err ,setErr] = useState()
+  // console.log(username,'usernameusernameusername');``
+  // console.log(role,'rolerole');
+  // console.log(import.meta.env.VITE_APP_API_URL,'REACT_APP_API_URL');
 
   const navigate = useNavigate()
+
+    
 
   const handelSubmit = () => {
     axios.post(import.meta.env.VITE_APP_API_URL+'/quizzes', {
@@ -23,10 +26,16 @@ function SignIn( {setUser}) {
       }
     })
       .then((res) =>{
-        setUser(res.data)
-        navigate('/home')
-        });
+        localStorage.setItem("user" , JSON.stringify({username : res.data.username  , role:res.data.role , _id: res.data._id }))
+        navigate('/home') 
+        }).catch((err) => { 
+           if(err.response.status === 500){
+              setErr("write yor name or yor role")
+           }
+        })
   };
+
+ console.log(err)
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -41,14 +50,16 @@ function SignIn( {setUser}) {
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                 <h1 className="text-5xl gigi-pink font-medium">GiGi</h1>
                 <h4 className="h4">Get Inclusive Get Innovative</h4>
+                <h2 className="text-red-500  italic h-2">{err}</h2>
+                
               </div>
               {/* Form */}
               <div className="max-w-sm mx-auto">
+              
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="login">Login</label>
                       <input onChange={(e)=>setUsername(e.target.value)} id="username" type="text" className="form-input w-full text-gray-800" placeholder="Enter your login" required />
-                      {/*<p className="text-red-500 text-xs italic h-2">{error.username ? "" : "Please fill out this field."}</p>*/}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">

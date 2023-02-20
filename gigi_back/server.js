@@ -5,7 +5,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import {server_config} from './config/index.js';
 import QuestionsSeeder from "./seeders/QuestionsSeeder.js";
-import { getAll , create , getUser , update , getClientQueztions  , getLeadQueztions , getSelfQueztions} from './quezControler/quezControler.js';
+import { create , getUser , update , getQueztions  } from './quezControler/quezControler.js';
 
 mongoose.set('strictQuery', false)
 
@@ -24,19 +24,13 @@ app.post('/quizzes', create)
 // question update
 app.patch('/quizzes/:id' , update )
 
-// get questions All
-app.get('/questions', getAll)
 
 // get users 
 app.get('/quezzes' , getUser)
 
-// get questionsClient 
-app.get('/getClientQueztions' , getClientQueztions)
+// get getQueztions 
+app.post('/getQueztions' , getQueztions)
 
-//get questions Lead
-app.get('/getLeadQueztions' , getLeadQueztions)
-//get questions self
-app.get('/getSelfQueztions' , getSelfQueztions)
 
 //create server
 app.listen(server_config.PORT, () => {

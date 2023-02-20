@@ -4,12 +4,11 @@ import '../css/style.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function Self({id}) {
+function Self({user}) {
     const [quez, setQuez] = useState([])
-    const [loginInp, setLoginInp] = useState({})
-    const [info, setInfo] = useState({ role: "self" })
+    const [info, setInfo] = useState({ role: "self"})
 
-    console.log(info)
+
     const handelCahnge = (e) => {
         const { name, value } = e.target;
         setInfo((item) => {
@@ -18,26 +17,35 @@ function Self({id}) {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/getLeadQueztions`)
+        axios.post(`${import.meta.env.VITE_APP_API_URL}/getQueztions`,user)
         .then(res => {
-          const persons = res.data;
-          setQuez(persons)
+            const persons = res.data;
+            setQuez(persons)
         })
     }, [])
 
 
     
-    const handelSubmitPatch = () => {
-        axios.patch(`http://localhost:3000/quizzes/${id}`, info, {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-            .then((res) =>{
-               console.log(res.data)  
-             })     .catch((err) => {
-                     console.log(err, "My error PATCH")
-          })
+    const handelSubmitPatch = (e) => {
+        e.preventDefault()
+            if(Object.values(info).length === quez.length + 1){
+
+                axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then((res) => {
+                        console.log(res.data, 'question-------------')
+                       
+                        
+                    }).catch((err) => {
+                        console.log(err, "My error PATCH")
+                    })
+
+                    navigate('/thank')
+
+               } 
       };
 
 
@@ -115,11 +123,11 @@ function Self({id}) {
 
                         </form>
                         <div className='w-full  flex justify-center'>
-                        <Link to="/thank">
+                    
                             <button onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
                                 submit
                             </button>
-                            </Link>
+                       
                         </div>
                     </div>
 

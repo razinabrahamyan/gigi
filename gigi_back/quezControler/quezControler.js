@@ -2,27 +2,13 @@ import QuezModel from '../models/Questions.js'
 import Quiz from '../models/Quiz.js'
 
 
-// Get All questions
-
-export const getAll = async (req, res) => {
-    try {
-         const posts = await QuezModel.find()
-         res.json(posts)
-
-    } catch (err) {
-        
-         res.status(500).json({
-              message: 'you have not create state'
-         })
-
-    }
-}
 
 
 // get client questions
-export const getClientQueztions = async (req, res) => {
+export const getQueztions = async (req, res) => { 
      try {
-          const posts = await QuezModel.find({role : "client"})
+          console.log(req.body,'ssssssssssssssssss')
+          const posts = await QuezModel.find({role : req.body.role}).sort({order : 1})
          
           res.json(posts)
  
@@ -35,35 +21,7 @@ export const getClientQueztions = async (req, res) => {
      }
  }
 
- // get lead questions
- export const getLeadQueztions = async (req, res) => {
-     try {
-          const posts = await QuezModel.find({role:"lead"})
-          res.json(posts)
-     } catch (err) {
-          console.log(err)
-          res.status(500).json({
-               message: 'you have not create state'
-          })
-     }
- }
-
  
- // get lead self
- export const getSelfQueztions = async (req, res) => {
-     try {
-          const posts = await QuezModel.find({role:"self"})
-       
-          res.json(posts)
- 
-     } catch (err) {
-          console.log(err)
-          res.status(500).json({
-               message: 'you have not create state'
-          })
- 
-     }
- }
 
 // Create User
 
@@ -79,7 +37,6 @@ export const create = async (req, res) => {
 
         return res.json(quiz);
     } catch (err) {
-         console.log(err)
          res.status(500).json({
               massage: 'you have not create state'
          })
@@ -118,7 +75,6 @@ export const update = async (req , res) => {
 
 // Get Users
 export const getUser = async (req, res) => {
-    
 
      try {
           const postsId = req.body.id

@@ -5,6 +5,7 @@ const Quiz = mongoose.model("Quiz", new Schema({
         username: {
              type: String, 
              required: true,
+             unique:true
         }
             ,
         role: {type: String, required: true,},
