@@ -7,13 +7,11 @@ import Quiz from '../models/Quiz.js'
 // get client questions
 export const getQueztions = async (req, res) => { 
      try {
-          console.log(req.body,'ssssssssssssssssss')
           const posts = await QuezModel.find({role : req.body.role}).sort({order : 1})
          
           res.json(posts)
  
      } catch (err) {
-          console.log(err)
           res.status(500).json({
                message: 'you have not create state'
           })
@@ -32,8 +30,7 @@ export const create = async (req, res) => {
              username: req.body.username,
              role: req.body.role,
          })
-          let post = await quiz.save()
-          console.log(post,"post")
+         await quiz.save()
 
         return res.json(quiz);
     } catch (err) {
@@ -48,7 +45,6 @@ export const create = async (req, res) => {
 // user question 
 
 export const update = async (req , res) => {
-     console.log(req.body)
      try{
           const postsId = req.params.id
           
@@ -65,7 +61,6 @@ export const update = async (req , res) => {
           })
  
      }catch(err){
-          console.log(err)
           res.status(500).json({
                massage: 'you have not update'
           })
@@ -82,7 +77,6 @@ export const getUser = async (req, res) => {
           res.json(posts)
  
      } catch (err) {
-          console.log(err)
           res.status(500).json({
                message: 'you have not create state'
           })

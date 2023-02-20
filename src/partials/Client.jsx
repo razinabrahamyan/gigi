@@ -5,19 +5,14 @@ import '../css/style.css';
 import axios from 'axios';
 import { Link , useNavigate } from 'react-router-dom';
 
-
-
 function Client({ user }) {
     
     const [quez, setQuez] = useState([])
     const [info, setInfo] = useState({ role: "client" })
     const navigate = useNavigate()
- 
- 
 
 
-
-    const handelCahnge = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
         setInfo((item) => {
             return { ...item, [name]: value };
@@ -37,8 +32,7 @@ function Client({ user }) {
 
 
     const handelSubmitPatch = (e) => {
-        e.preventDefault()
-            if(Object.values(info).length === quez.length + 1){
+        if(Object.values(info).length === quez.length + 1){
 
                 axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
                     headers: {
@@ -47,13 +41,12 @@ function Client({ user }) {
                 })
                     .then((res) => {
                         console.log(res.data, 'question-------------')
-                       
+                        navigate('/thank')
                         
                     }).catch((err) => {
                         console.log(err, "My error PATCH")
                     })
 
-                    navigate('/thank')
 
                } 
     };
@@ -85,7 +78,7 @@ function Client({ user }) {
                                                     className={`appearance-none bg-transparent border-none w-full text-gray-700 order-${item.order} mr-3 py-1 px-2 leading-tight`}
                                                     name={item.name}
                                                     required
-                                                    onChange={handelCahnge}
+                                                    onChange={handleChange}
                                                     placeholder={item.text}
                                                     type={item.type} /> :
                                                     <div className="mt-2
@@ -97,31 +90,31 @@ function Client({ user }) {
                                                             <label className="flex items-center gap-1 flex-col">
 
                                                                 <span>1</span>
-                                                                <input required onChange={handelCahnge} type="radio" name={`q${item.value}`} value="1"
+                                                                <input required onChange={handleChange} type="radio" name={`q${item.value}`} value="1"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>2</span>
-                                                                <input required onChange={handelCahnge} type="radio" name={`q${item.value}`} value="2"
+                                                                <input required onChange={handleChange} type="radio" name={`q${item.value}`} value="2"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>3</span>
-                                                                <input required onChange={handelCahnge} type="radio" name={`q${item.value}`} value="3"
+                                                                <input required onChange={handleChange} type="radio" name={`q${item.value}`} value="3"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>4</span>
-                                                                <input required onChange={handelCahnge} type="radio" name={`q${item.value}`} value="4"
+                                                                <input required onChange={handleChange} type="radio" name={`q${item.value}`} value="4"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>5</span>
-                                                                <input required onChange={handelCahnge} type="radio" name={`q${item.value}`} value="5"
+                                                                <input required onChange={handleChange} type="radio" name={`q${item.value}`} value="5"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label><b className="text-teal-500 pt-6 ">amazing</b>
@@ -136,7 +129,7 @@ function Client({ user }) {
                             } 
                               <div className='w-full  flex justify-center'>
                                 <button onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
-                                        submit
+                                        Submit
                                 </button>
                              </div>
 

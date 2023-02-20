@@ -8,9 +8,6 @@ function SignIn( {setUser}) {
   const [username, setUsername] = useState()
   const [role, setRole] = useState()
   const [err ,setErr] = useState()
-  // console.log(username,'usernameusernameusername');``
-  // console.log(role,'rolerole');
-  // console.log(import.meta.env.VITE_APP_API_URL,'REACT_APP_API_URL');
 
   const navigate = useNavigate()
 
@@ -30,12 +27,10 @@ function SignIn( {setUser}) {
         navigate('/home') 
         }).catch((err) => { 
            if(err.response.status === 500){
-              setErr("write yor name or yor role")
+              setErr("Please fill all fields")
            }
         })
   };
-
- console.log(err)
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -51,11 +46,10 @@ function SignIn( {setUser}) {
                 <h1 className="text-5xl gigi-pink font-medium">GiGi</h1>
                 <h4 className="h4">Get Inclusive Get Innovative</h4>
                 <h2 className="text-red-500  italic h-2">{err}</h2>
-                
               </div>
               {/* Form */}
               <div className="max-w-sm mx-auto">
-              
+
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="login">Login</label>

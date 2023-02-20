@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import '../css/style.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function Self({user}) {
+    const navigate = useNavigate()
     const [quez, setQuez] = useState([])
     const [info, setInfo] = useState({ role: "self"})
 
 
-    const handelCahnge = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
         setInfo((item) => {
             return { ...item, [name]: value };
@@ -27,7 +28,6 @@ function Self({user}) {
 
     
     const handelSubmitPatch = (e) => {
-        e.preventDefault()
             if(Object.values(info).length === quez.length + 1){
 
                 axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
@@ -37,13 +37,13 @@ function Self({user}) {
                 })
                     .then((res) => {
                         console.log(res.data, 'question-------------')
-                       
+                        navigate('/thank')
+
                         
                     }).catch((err) => {
                         console.log(err, "My error PATCH")
                     })
 
-                    navigate('/thank')
 
                } 
       };
@@ -75,7 +75,7 @@ function Self({user}) {
                                                     py-1 px-2 leading-tight"
                                                     name={item.name}
                                                     placeholder={item.text}
-                                                    onChange={handelCahnge}
+                                                    onChange={handleChange}
                                                     type={item.type} /> :
                                                     <div className="mt-2 flex items-center flex-row items-center justify-center w-full py-14">
                                                         <div className="flex  gap-16 w-full md:flex-row flex-col justify-center items-center ">
@@ -83,31 +83,31 @@ function Self({user}) {
                                                             <label className="flex items-center gap-1 flex-col">
 
                                                                 <span>1</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="1"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="1"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>2</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="2"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="2"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>3</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="3"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="3"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>4</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="4"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="4"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-1 flex-col">
                                                                 <span>5</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="5"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="5"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label><b className="text-teal-500 pt-6 ">amazing</b>
@@ -125,7 +125,7 @@ function Self({user}) {
                         <div className='w-full  flex justify-center'>
                     
                             <button onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
-                                submit
+                                Submit
                             </button>
                        
                         </div>

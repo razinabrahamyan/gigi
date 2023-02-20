@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import '../css/style.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 
 function Lead({user}) {
+    const navigate = useNavigate()
     const [quez, setQuez] = useState([])
     const [info, setInfo] = useState({ role: "lead" })
 
 
 
-    const handelCahnge = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
         setInfo((item) => {
             return { ...item, [name]: value };
@@ -29,23 +30,19 @@ function Lead({user}) {
 
 
     const handelSubmitPatch = (e) => {
-        e.preventDefault()
         if(Object.values(info).length === quez.length + 1){
 
             axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            })
-                .then((res) => {
+            }).then((res) => {
                     console.log(res.data, 'question-------------')
-                   
-                    
+                    navigate('/thank')
                 }).catch((err) => {
                     console.log(err, "My error PATCH")
                 })
 
-                navigate('/thank')
 
            } 
       };
@@ -75,42 +72,42 @@ function Lead({user}) {
                                                 <label htmlFor="reviewing" className={'text-black-700 font-bold'}> {item.text}</label>
                                                 <div className="flex items-center border-b border-grey-700 py-2">
                                                     {item.type === 'text' ? <input
-                                                        onChange={handelCahnge}
+                                                        onChange={handleChange}
                                                         className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3
                                                          py-1 px-2 leading-tight"
                                                         placeholder={item.text}
-                                                        name="reviewing"
+                                                        name={item.name}
                                                         type={item.type} /> : <div className="mt-2 flex items-center flex-row items-center justify-center w-full py-14">
                                                         <div className="flex gap-16 w-full md:flex-row flex-col justify-center items-center  ">
                                                         <b className="text-red-500 pt-10 "> lots of help needed</b>
                                                             
                                                             <label className="flex items-center gap-3 flex-col ">
                                                                 <span>1</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="1"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="1"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
 
                                                             </label>
                                                             <label className="flex items-center gap-3 flex-col">
                                                                 <span>2</span>
 
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="2"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="2"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
                                                             </label>
                                                             <label className="flex items-center gap-3 flex-col">
                                                                 <span>3</span>
 
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="3"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="3"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
                                                             </label>
                                                             <label className="flex items-center gap-3 flex-col">
                                                                 <span>4</span>
 
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="4"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="4"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
                                                             </label>
                                                             <label className="flex items-center gap-3 flex-col">
                                                                 <span>5</span>
-                                                                <input onChange={handelCahnge} type="radio" name={`q${item.value}`} value="5"
+                                                                <input onChange={handleChange} type="radio" name={`q${item.value}`} value="5"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
                                                             </label>
                                                             <b className='text-teal-600 pt-10'>amazing</b>
@@ -128,8 +125,8 @@ function Lead({user}) {
                         </form>
                         <div className='w-full  flex justify-center'>
                          
-                            <button onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
-                                submit
+                            <button type={"button"} onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
+                                Submit
                             </button>
                          
                         </div>

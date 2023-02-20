@@ -51,68 +51,68 @@ function Review() {
                                             </thead>
                                             <tbody>
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4 text-sm font-medium text-gray-900">
                                                     They are very pleased with their work this term
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q1" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q1" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q1" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q1" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They have the technical skills/ knowledge to do their work
                                                     effectively
 
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q2" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q2" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q2" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q2" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They produce high-quality work
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q3" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q3" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q3" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q3" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
@@ -120,132 +120,132 @@ function Review() {
 
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They do their work in a timely manner
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q4" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q4" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q4" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q4" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They are reliable
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q5" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q5" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q5" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q5" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They ask for help when needed
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q6" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q6" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q6" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q6" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They are adept at problem-solving
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q7" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q7" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q7" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q7" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They organize and prioritize their time effectively
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q8" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q8" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q8" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q8" value="4"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
                                             </tr>
 
                                             <tr className="border-b">
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <td className="px-6 py-4  text-sm font-medium text-gray-900">
                                                     They work well with their team
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q9" value="1"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q9" value="2"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q9" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                <td className="text-sm text-gray-900 font-light px-6 py-4 ">
                                                     <input type="radio" name="q9" value="3"
                                                            className="appearance-none h-4 w-4 border border-gray-400"/>
                                                 </td>

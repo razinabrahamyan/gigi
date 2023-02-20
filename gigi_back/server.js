@@ -34,5 +34,4 @@ app.post('/getQueztions' , getQueztions)
 
 //create server
 app.listen(server_config.PORT, () => {
-    console.log(`Example app listening on port ${server_config.PORT}`)
 })
