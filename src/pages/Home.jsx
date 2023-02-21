@@ -1,23 +1,21 @@
-import React, {useEffect} from 'react';
+
 
 import Header from '../partials/Header';
 import Client from "../partials/Client";
 import Lead from "../partials/Lead";
 import Self from "../partials/Self";
-import Thank from "../partials/Thank";
-import Review from "../partials/Review";
 
-function Home({user}) {
-    const locUser = JSON.parse(localStorage.getItem("user"))
+function Home({ handleChange , locUser , err ,  handelSubmitPatch , setquezArry , quezArry }) {
+   
 
 
     let component;
     if (locUser.role === 'client') {
-        component = <Client user={locUser}/>;
+        component = <Client user={locUser} err={err} handleChange={handleChange}   handelSubmitPatch={handelSubmitPatch} quezArry={quezArry} setquezArry={setquezArry} />;
     } else if (locUser.role === 'lead') {
-        component = <Lead user={locUser}/>;
+        component = <Lead user={locUser}  err={err}  handleChange={handleChange}  handelSubmitPatch={handelSubmitPatch}  quezArry={quezArry} setquezArry={setquezArry}/>;
     } else if (locUser.role === 'self') {
-        component = <Self user={locUser}/>;
+        component = <Self user={locUser}  err={err} handleChange={handleChange}   handelSubmitPatch={handelSubmitPatch}  quezArry={quezArry} setquezArry={setquezArry} />;
     }
 
     return (

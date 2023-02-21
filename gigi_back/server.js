@@ -10,7 +10,6 @@ import { create , getUser , update , getQueztions  } from './quezControler/quezC
 mongoose.set('strictQuery', false)
 
 dbConnection().then(() => {
-    console.log('db connected');
     QuestionsSeeder();
 });
 const app = express();

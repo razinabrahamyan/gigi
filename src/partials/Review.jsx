@@ -1,9 +1,7 @@
 import React from 'react';
 import Header  from './Header';
 
-function Review() {
-     let locUser  = JSON.parse(localStorage.getItem("user"))
-     
+function Review({locUser}) {
     return (
         <>
         <Header />

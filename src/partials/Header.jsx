@@ -5,6 +5,8 @@ import Logo from "../images/gigi_logo.png";
 function Header() {
 
   const [top, setTop] = useState(true);
+  
+  
 
   // detect whether user has scrolled the page down by 10px 
   useEffect(() => {
@@ -22,20 +24,10 @@ function Header() {
           {/* Site branding */}
           <div className="flex-shrink-0">
             {/* Logo */}
-            <Link to="/" className="block" aria-label="Cruip">
+            <Link to="/"  className="block" aria-label="Cruip">
               <img src={Logo} alt="gigi logo" width={'60px'} height={'60px'}/>
             </Link>
           </div>
-
-          {/* Site navigation */}
-          {/* <nav className="flex flex-grow">
-            <ul className="flex flex-grow justify-end flex-wrap items-center">
-              <li>
-                <Link to="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
-              </li>
-            </ul>
-
-          </nav> */}
 
         </div>
       </div>

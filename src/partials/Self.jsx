@@ -4,51 +4,17 @@ import '../css/style.css';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 
-function Self({user}) {
-    const navigate = useNavigate()
-    const [quez, setQuez] = useState([])
-    const [info, setInfo] = useState({ role: "self"})
-
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setInfo((item) => {
-            return { ...item, [name]: value };
-        });
-    };
-
+function Self({ user, err,  handleChange , handelSubmitPatch , setquezArry , quezArry }) {
+ 
     useEffect(() => {
         axios.post(`${import.meta.env.VITE_APP_API_URL}/getQueztions`,user)
         .then(res => {
             const persons = res.data;
-            setQuez(persons)
+            setquezArry(persons)
         })
     }, [])
 
-
     
-    const handelSubmitPatch = (e) => {
-            if(Object.values(info).length === quez.length + 1){
-
-                axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                    .then((res) => {
-                        console.log(res.data, 'question-------------')
-                        navigate('/thank')
-
-                        
-                    }).catch((err) => {
-                        console.log(err, "My error PATCH")
-                    })
-
-
-               } 
-      };
-
-
     return (
         <React.Fragment>
             <Header />
@@ -65,7 +31,7 @@ function Self({user}) {
                         {/* Section form */}
                         <form className="w-full">
                             {
-                                quez.map((item) => {
+                                quezArry.map((item) => {
                                     return <div key={item._id} className="mb-4 bg-white rounded-t-lg rounded-b-lg border-r border-b border-l border-t border-gray-200 p-4 flex">
                                         <div className="flex flex-col gap-y-2 w-full">
                                             <label htmlFor={item.name} className={'text-black-700 font-bold'}> {item.text}</label>
@@ -122,12 +88,11 @@ function Self({user}) {
                             }
 
                         </form>
+                        <h2  className='w-full  flex justify-center text-red-500'>{err}</h2>
                         <div className='w-full  flex justify-center'>
-                    
                             <button onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
                                 Submit
                             </button>
-                       
                         </div>
                     </div>
 

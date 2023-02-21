@@ -1,35 +1,43 @@
 import axios from 'axios';
-import React, { useState,  useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../partials/Header';
 
-function SignIn( {setUser}) {
+function SignIn({ setUser, err, setErr ,  setInfo  }) {
 
   const [username, setUsername] = useState()
   const [role, setRole] = useState()
-  const [err ,setErr] = useState()
+
 
   const navigate = useNavigate()
+  useEffect(() => {
+     setErr("") 
 
-    
+  }, [])
+  useEffect(() => {
+    setInfo({}) 
 
+ }, [])
+  
   const handelSubmit = () => {
-    axios.post(import.meta.env.VITE_APP_API_URL+'/quizzes', {
-      'username' : username,
-      'role' : role
+    axios.post(import.meta.env.VITE_APP_API_URL + '/quizzes', {
+      'username': username,
+      'role': role
     }, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then((res) =>{
-        localStorage.setItem("user" , JSON.stringify({username : res.data.username  , role:res.data.role , _id: res.data._id }))
-        navigate('/home') 
-        }).catch((err) => { 
-           if(err.response.status === 500){
-              setErr("Please fill all fields")
-           }
-        })
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify({ username: res.data.username, role: res.data.role, _id: res.data._id }))
+        setUser(res.data)
+        setErr("")
+        navigate('/home')
+      }).catch((err) => {
+        if (err.response.status === 500) {
+          setErr("Please fill all fields")
+        }
+      })
   };
 
   return (
@@ -50,37 +58,37 @@ function SignIn( {setUser}) {
               {/* Form */}
               <div className="max-w-sm mx-auto">
 
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="login">Login</label>
-                      <input onChange={(e)=>setUsername(e.target.value)} id="username" type="text" className="form-input w-full text-gray-800" placeholder="Enter your login" required />
+                <div className="flex flex-wrap -mx-3 mb-4">
+                  <div className="w-full px-3">
+                    <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="login">Login</label>
+                    <input onChange={(e) => setUsername(e.target.value)} id="username" type="text" className="form-input w-full text-gray-800" placeholder="Enter your login" required />
+                  </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mb-4">
+                  <div className="w-full px-3">
+                    <div className="flex justify-between">
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="role">Role</label>
                     </div>
+                    <select
+                      onChange={(e) => setRole(e.target.value)}
+                      className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                      <option>Please select your role</option>
+                      <option value={'client'}>Client/Team Member</option>
+                      <option value={'lead'}>Lead</option>
+                      <option value={'self'}>Self</option>
+                    </select>
                   </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <div className="flex justify-between">
-                        <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="role">Role</label>
-                      </div>
-                      <select
-                        onChange={(e)=>setRole(e.target.value)}
-                        className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <option>Please select your role</option>
-                        <option value={'client'}>Client/Team Member</option>
-                        <option value={'lead'}>Lead</option>
-                        <option value={'self'}>Self</option>
-                      </select>
-                    </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mt-6">
+                  <div className="w-full px-3">
                   </div>
-                  <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3">
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3"/>
-                  </div>
-                  <button onClick={handelSubmit} type={"submit"} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full" >
-                    Sign in
-                  </button>
+                </div>
+                <div className="flex flex-wrap -mx-3 mt-6">
+                  <div className="w-full px-3" />
+                </div>
+                <button onClick={handelSubmit} type={"submit"} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full" >
+                  Sign in
+                </button>
               </div>
             </div>
             <h4 className="h4 text-center" >

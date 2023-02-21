@@ -3,56 +3,19 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import '../css/style.css';
 import axios from 'axios';
-import { Link , useNavigate } from 'react-router-dom';
-
-function Client({ user }) {
-    
-    const [quez, setQuez] = useState([])
-    const [info, setInfo] = useState({ role: "client" })
-    const navigate = useNavigate()
 
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setInfo((item) => {
-            return { ...item, [name]: value };
-        });
-    };
-
+function Client({ user , err ,  handleChange ,  handelSubmitPatch , setquezArry , quezArry}) {
 
     useEffect(() => {
         axios.post(`${import.meta.env.VITE_APP_API_URL}/getQueztions`,user)
             .then(res => {
                 const persons = res.data;
-                setQuez(persons)
+                setquezArry(persons)
             })
     }, [])
 
-
-
-
-    const handelSubmitPatch = (e) => {
-        if(Object.values(info).length === quez.length + 1){
-
-                axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                    .then((res) => {
-                        console.log(res.data, 'question-------------')
-                        navigate('/thank')
-                        
-                    }).catch((err) => {
-                        console.log(err, "My error PATCH")
-                    })
-
-
-               } 
-    };
-
-
-
+   
     return (
         <React.Fragment>
             <Header />
@@ -69,7 +32,7 @@ function Client({ user }) {
                         {/* Section form */}
                         <form className="w-full">
                             {
-                                quez.map((item) => {
+                                quezArry.map((item) => {
                                     return <div key={item._id} className="mb-4 bg-white rounded-t-lg rounded-b-lg border-r border-b border-l border-t border-gray-200 p-4 flex">
                                         <div className="flex flex-col gap-y-2 w-full">
                                             <label htmlFor={item.name} className={'text-black-700 font-bold'}> {item.text}</label>
@@ -82,8 +45,8 @@ function Client({ user }) {
                                                     placeholder={item.text}
                                                     type={item.type} /> :
                                                     <div className="mt-2
-                                                 flex items-center
-                                                 flex-row items-center 
+                                                                flex items-center
+                                                                flex-row items-center 
                                                   w-full py-14 ">
                                                         <div className={`flex  gap-16 w-full md:flex-row flex-col justify-center items-center order-${item.order} `}>
                                                             <b className="text-red-500 pt-6 "> lots of help needed</b>
@@ -127,6 +90,7 @@ function Client({ user }) {
 
                                 })
                             } 
+                            <h2  className='w-full  flex justify-center text-red-500'>{err}</h2>
                               <div className='w-full  flex justify-center'>
                                 <button onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
                                         Submit
@@ -134,10 +98,6 @@ function Client({ user }) {
                              </div>
 
                         </form>
-                       
-                             
-                      
-                      
                     </div>
                 </div>
             </section>

@@ -167,7 +167,5 @@ export default async function QuestionsSeeder(){
         type: 'radio'
     }];
     await Questions.create(questions);
-  }else{
-     console.log("Questions already added")
   }
 }

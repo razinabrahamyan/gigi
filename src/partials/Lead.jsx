@@ -2,51 +2,18 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import '../css/style.css';
 import axios from 'axios';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
-function Lead({user}) {
-    const navigate = useNavigate()
-    const [quez, setQuez] = useState([])
-    const [info, setInfo] = useState({ role: "lead" })
-
-
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setInfo((item) => {
-            return { ...item, [name]: value };
-        });
-    };
-
- 
+function Lead({ user, err,  handleChange , handelSubmitPatch , setquezArry , quezArry }) {
+   
     useEffect(() => {
-        axios.post(`${import.meta.env.VITE_APP_API_URL}/getQueztions`,user)
-        .then(res => {
-            const persons = res.data;
-            setQuez(persons)
-        })
+        axios.post(`${import.meta.env.VITE_APP_API_URL}/getQueztions`, user)
+            .then(res => {
+                const persons = res.data;
+                setquezArry(persons)
+            })
     }, [])
-
-
-    const handelSubmitPatch = (e) => {
-        if(Object.values(info).length === quez.length + 1){
-
-            axios.patch(`${import.meta.env.VITE_APP_API_URL}/quizzes/${user._id}`, info, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then((res) => {
-                    console.log(res.data, 'question-------------')
-                    navigate('/thank')
-                }).catch((err) => {
-                    console.log(err, "My error PATCH")
-                })
-
-
-           } 
-      };
-
 
     return (
         <React.Fragment>
@@ -66,7 +33,7 @@ function Lead({user}) {
                         <form className="w-full">
                             <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
                                 {
-                                    quez.map((item) => {
+                                    quezArry.map((item) => {
                                         return <div key={item._id} className="mb-4 bg-white rounded-t-lg rounded-b-lg border-r border-b border-l border-t border-gray-200 p-4 flex">
                                             <div className="flex flex-col gap-y-2 w-full">
                                                 <label htmlFor="reviewing" className={'text-black-700 font-bold'}> {item.text}</label>
@@ -79,8 +46,8 @@ function Lead({user}) {
                                                         name={item.name}
                                                         type={item.type} /> : <div className="mt-2 flex items-center flex-row items-center justify-center w-full py-14">
                                                         <div className="flex gap-16 w-full md:flex-row flex-col justify-center items-center  ">
-                                                        <b className="text-red-500 pt-10 "> lots of help needed</b>
-                                                            
+                                                            <b className="text-red-500 pt-10 "> lots of help needed</b>
+
                                                             <label className="flex items-center gap-3 flex-col ">
                                                                 <span>1</span>
                                                                 <input onChange={handleChange} type="radio" name={`q${item.value}`} value="1"
@@ -123,12 +90,14 @@ function Lead({user}) {
 
                             </div>
                         </form>
+                        <h2 className='w-full  flex justify-center text-red-500'>{err}</h2>
+
                         <div className='w-full  flex justify-center'>
-                         
+
                             <button type={"button"} onClick={handelSubmitPatch} className="btn text-white bg-blue-600 hover:bg-blue-700 w-24 mt-4 " >
                                 Submit
                             </button>
-                         
+
                         </div>
                     </div>
                 </div>
