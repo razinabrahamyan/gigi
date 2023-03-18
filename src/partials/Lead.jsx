@@ -25,7 +25,7 @@ function Lead({ user, err,  handleChange , handelSubmitPatch , setquezArry , que
                         <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
                             data-aos="fade-right">
                             <div className="mb-8 text-center">
-                                <h3 className={'header-color h3'}>Performance Review - Lead</h3>
+                                <h3 className={'text-blue-100 text-2xl h3 md:text-3xl'}>Performance Review - Lead</h3>
                             </div>
                         </div>
                         {/* Section form */}
@@ -44,9 +44,9 @@ function Lead({ user, err,  handleChange , handelSubmitPatch , setquezArry , que
                                                          py-1 px-2 leading-tight"
                                                         placeholder={item.text}
                                                         name={item.name}
-                                                        type={item.type} /> : <div className="mt-2 flex items-center flex-row items-center justify-center w-full py-14">
-                                                        <div className="flex gap-16 w-full md:flex-row flex-col justify-center items-center  ">
-                                                            <b className="text-red-500 pt-10 "> lots of help needed</b>
+                                                        type={item.type} /> : <div className="mt-2 flex items-center flex-row items-center justify-center w-full pb-12 md:py-14">
+                                                        <div className="flex gap-10  md:gap-16 w-full flex-row justify-center items-center">
+                                                            <b className="text-red-500 pt-10 hidden md:block"> lots of help needed</b>
 
                                                             <label className="flex items-center gap-3 flex-col ">
                                                                 <span>1</span>
@@ -77,7 +77,7 @@ function Lead({ user, err,  handleChange , handelSubmitPatch , setquezArry , que
                                                                 <input onChange={handleChange} type="radio" name={`q${item.value}`} value="5"
                                                                     className="appearance-none h-4 w-4 border border-gray-400" />
                                                             </label>
-                                                            <b className='text-teal-600 pt-10'>amazing</b>
+                                                            <b className='text-teal-600 pt-10 hidden md:block'>amazing</b>
                                                         </div>
                                                     </div>
                                                     }

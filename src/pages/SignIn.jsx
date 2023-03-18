@@ -51,7 +51,7 @@ function SignIn({ setUser, err, setErr ,  setInfo  }) {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="text-5xl gigi-pink font-medium">GiGi</h1>
+                <h1 className="text-5xl text-pink-100 font-medium">GiGi</h1>
                 <h4 className="h4">Get Inclusive Get Innovative</h4>
                 <h2 className="text-red-500  italic h-2">{err}</h2>
               </div>

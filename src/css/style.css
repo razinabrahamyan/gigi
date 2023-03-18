@@ -23,19 +23,6 @@
     display: none;
 }
 
-.gigi-pink {
-    color: #ff66c4;
-}
-
-.header-color {
-    color: #004a98;
-}
-
-.bg-grey-new {
-    background-color: #eaeaea9e;
-}
-
-
 
 [type="text"]:focus{
     box-shadow: none !important;

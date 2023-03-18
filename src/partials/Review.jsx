@@ -12,7 +12,7 @@ function Review({locUser}) {
                     <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
                          data-aos="fade-right">
                         <div className="mb-8 text-center">
-                            <h3 className={'header-color h3'}>Performance Review of ({locUser.username})</h3>
+                            <h3 className={'text-blue-100 text-2xl h3 md:text-3xl'}>Performance Review of ({locUser.username})</h3>
                         </div>
                     </div>
                     {/* Section form */}

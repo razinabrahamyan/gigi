@@ -19,7 +19,7 @@ function Home({ handleChange , locUser , err ,  handelSubmitPatch , setquezArry 
     }
 
     return (
-        <div className="flex flex-col min-h-screen overflow-hidden bg-grey-new">
+        <div className="flex flex-col min-h-screen overflow-hidden text-grey-100">
             <Header/>
             <main className="flex-grow">
                 {component}
